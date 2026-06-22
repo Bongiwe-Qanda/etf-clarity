@@ -11,9 +11,9 @@ def fetch_etf_data(ticker):
 
     data.to_csv(f"data/raw/{ticker}.csv")
 
-    return data
-
     print(f"Fetched data for {ticker} saved to data/raw/{ticker}.csv")
+
+    return data
 
 if __name__ == "__main__":
     fetch_etf_data("STX40.JO")
