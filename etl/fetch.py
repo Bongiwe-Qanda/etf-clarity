@@ -15,5 +15,17 @@ def fetch_etf_data(ticker):
 
     return data
 
+
+def fetch_multiple_etf_data(tickers):
+
+    tickers_list = []
+
+    for ticker in tickers:
+        tickers_list.append(fetch_etf_data(ticker))
+    return tickers_list
+
+
 if __name__ == "__main__":
-    fetch_etf_data("STX40.JO")
+    tickers = ["STX40.JO", "SYG4IR.JO", "STXNDQ.JO"]
+    fetch_multiple_etf_data(tickers)
+
