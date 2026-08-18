@@ -17,6 +17,12 @@ def fetch_clean_data(ticker):
     connection.close()
     return df
 
+def explain_etf(ticker):
+    clean_data = fetch_clean_data(ticker)
+    latest_close = clean_data["close"].iloc[-1]
+    print(f"Current price of {ticker}: R{latest_close:.2f}")
+    return latest_close
 if __name__ == "__main__":
     df = fetch_clean_data("STX40.JO")
-    print(df.head())
+    explained = explain_etf("STX40.JO")
+    print(explained)
