@@ -44,7 +44,6 @@ it would be worth R{10000 * (1 + return_1y/100):,.2f} today.
 }
 
 
-
 if __name__ == "__main__":
     df = fetch_clean_data("STX40.JO")
     explained = explain_etf("STX40.JO")

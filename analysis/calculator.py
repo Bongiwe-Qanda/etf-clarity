@@ -12,7 +12,7 @@ def calculate_scenario(monthly_investment, years, annual_return_rate):
     profit = future_value - total_invested
 
     print(f"""
-If you invest R{monthly_investment:,.2f}/month for {years} years at {annual_return_rate}% annual return:
+If you invest R{monthly_investment:,.2f}/month for {years} years at {annual_return_rate:.2f}% annual return:
 Total invested: R{total_invested:,.2f}
 Estimated value: R{future_value:,.2f}
 Profit: R{profit:,.2f}
