@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+from config.settings import HISTORY_PERIOD
 
 def fetch_etf_data(ticker):
     
@@ -7,7 +8,7 @@ def fetch_etf_data(ticker):
     etf = yf.Ticker(ticker)
 
     #get historical price data
-    data = etf.history(period = "5y")
+    data = etf.history(period=HISTORY_PERIOD)
 
     data.to_csv(f"data/raw/{ticker}.csv")
 
@@ -25,7 +26,6 @@ def fetch_multiple_etf_data(tickers):
     return tickers_list
 
 
-if __name__ == "__main__":
-    tickers = ["STX40.JO", "SYG4IR.JO", "STXNDQ.JO"]
-    fetch_multiple_etf_data(tickers)
-
+# if __name__ == "__main__":
+#     tickers = ["STX40.JO", "SYG4IR.JO", "STXNDQ.JO"]
+#     fetch_multiple_etf_data(tickers)
