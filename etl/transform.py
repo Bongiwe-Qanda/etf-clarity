@@ -27,8 +27,9 @@ def transform_raw_data(df):
     return no_incorrect_date
 
 
-if __name__ == "__main__":
-    from fetch import fetch_etf_data
-    raw_data = fetch_etf_data("STX40.JO")
-    clean_data = transform_raw_data(raw_data)
-    print(clean_data.head(10))
+
+# if __name__ == "__main__":
+#     from fetch import fetch_etf_data
+#     raw = fetch_etf_data("STX40.JO")
+#     clean = transform_raw_data(raw)
+#     print(clean.columns)
