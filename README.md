@@ -20,6 +20,11 @@ between funds. ETFClarity bridges that gap.
 ## Pipeline Architecture
 ![ETFClarity Pipeline](docs/pipeline.png)
 
+## Cloud Infrastructure
+- **S3:** Raw ETF CSV files stored in `etf-clarity-raw-data` bucket
+- **RDS:** PostgreSQL database hosted on AWS (af-south-1)
+- **EC2:** Coming next, it will run the scheduler 24/7
+
 ## Tech stack
 - **Pipeline:** Python · pandas · yfinance · APScheduler
 - **Database:** PostgreSQL (local) → AWS RDS (cloud)
