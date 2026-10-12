@@ -21,8 +21,12 @@ between funds. ETFClarity bridges that gap.
 ![ETFClarity Pipeline](docs/pipeline.png)
 
 ## Tech stack
-- Python · pandas · PostgreSQL · yfinance · APScheduler
-
+- **Pipeline:** Python · pandas · yfinance · APScheduler
+- **Database:** PostgreSQL (local) → AWS RDS (cloud)
+- **Storage:** Local CSV → AWS S3
+- **Compute:** AWS EC2
+- **Monitoring:** AWS CloudWatch
+- 
 ## Setup
 ```bash
 # Clone the repo
@@ -50,6 +54,8 @@ python cli.py
 ## What's next
 - [ ] Add SARB interest rate and inflation context
 - [ ] ETF comparison — compare two funds side by side
-- [ ] ML extension — return prediction model using historical data
-- [ ] NLP summaries — auto-generate plain English fund reports using LLMs
-- [ ] Web interface — move beyond the CLI to a browser-based tool
+- [ ] Migrate database to AWS RDS
+- [ ] Deploy scheduler to AWS EC2
+- [ ] Return prediction model using historical ETF data
+- [ ] NLP summaries — auto-generate plain English fund reports
+- [ ] Web interface
