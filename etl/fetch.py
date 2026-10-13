@@ -28,6 +28,13 @@ def fetch_multiple_etf_data(tickers):
         tickers_list.append(fetch_etf_data(ticker))
     return tickers_list
 
+def save_to_s3(ticker, data):
+    filename = f"{ticker}.csv"
+    local_path = f"data/raw/{filename}"
+    data.to_csv(local_path)
+    s3_client.upload_file(local_path, AWS_BUCKET_NAME, f"raw/{filename}")
+    print(f"Uploaded {filename} to S3 bucket")
+
 
 # if __name__ == "__main__":
 #     tickers = ["STX40.JO", "SYG4IR.JO", "STXNDQ.JO"]
