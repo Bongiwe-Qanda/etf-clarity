@@ -1,6 +1,9 @@
+import boto3
 import yfinance as yf
 import pandas as pd
-from config.settings import HISTORY_PERIOD
+from config.settings import HISTORY_PERIOD,AWS_BUCKET_NAME, AWS_REGION
+
+s3_client = boto3.client('s3', region_name=AWS_REGION)
 
 def fetch_etf_data(ticker):
     
